@@ -47,10 +47,12 @@ var DatePicker = React.createClass({
     });
   },
 
-  lostFocus: function() {
-    this.setState({
-      focus: false
-    });
+  lostFocus: function(event) {
+    if (event.nativeEvent.relatedTarget || event.nativeEvent.rangeParent === null) {
+      this.setState({
+        focus: false
+      });
+    }
   },
 
   hideCalendar: function() {
