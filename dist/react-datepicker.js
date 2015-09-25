@@ -108,7 +108,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  },
 
 	  lostFocus: function lostFocus(event) {
-	    if (event.nativeEvent.relatedTarget) {
+	    if (event.nativeEvent.relatedTarget || event.nativeEvent.rangeParent === null) {
 	      this.setState({
 	        focus: false
 	      });

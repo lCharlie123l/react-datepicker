@@ -48,7 +48,7 @@ var DatePicker = React.createClass({
   },
 
   lostFocus: function(event) {
-    if (event.nativeEvent.relatedTarget){
+    if (event.nativeEvent.relatedTarget || event.nativeEvent.rangeParent === null) {
       this.setState({
         focus: false
       });
